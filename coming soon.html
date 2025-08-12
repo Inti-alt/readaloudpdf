@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Coming Soon • ReadAloudpdf</title>
+<style>
+  :root{
+    --bg:#0b0b0b;
+    --panel:#0f0f10;
+    --muted:#9aa0a6;
+    --accent:#ff8a00; /* orangish */
+    --glass: rgba(255,255,255,0.03);
+    --radius:12px;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    background:linear-gradient(180deg,var(--bg) 0%, #070707 100%);
+    color:#e7e7e7;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:32px;
+  }
+
+  .card{
+    width:100%;
+    max-width:600px;
+    background:linear-gradient(180deg,var(--panel),rgba(255,255,255,0.01));
+    border-radius:var(--radius);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    padding:36px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .brand{
+    display:flex;
+    gap:18px;
+    align-items:center;
+  }
+  .logo{
+    width:72px;
+    height:72px;
+    border-radius:14px;
+    background:linear-gradient(135deg,var(--accent),#ffb66b);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:700;
+    color:#151515;
+    font-size:20px;
+    box-shadow: 0 6px 22px rgba(255,138,0,0.12), inset 0 -6px 30px rgba(255,255,255,0.03);
+  }
+
+  h1{
+    margin:6px 0 8px;
+    font-size:28px;
+    line-height:1.05;
+    letter-spacing:-0.02em;
+    color:#fff;
+  }
+  p.lead{
+    margin:0 0 18px;
+    color:var(--muted);
+    max-width:100%;
+  }
+
+  .features{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:12px;
+  }
+  .pill{
+    background:var(--glass);
+    color:var(--muted);
+    padding:8px 12px;
+    border-radius:999px;
+    font-size:13px;
+    border:1px solid rgba(255,255,255,0.02);
+  }
+
+  /* form area */
+  .panel{
+    background: rgba(255,255,255,0.02);
+    border-radius:10px;
+    padding:20px;
+    border:1px solid rgba(255,255,255,0.03);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .cta-title{
+    font-size:16px;
+    font-weight:600;
+    margin:0;
+    color:#fff;
+  }
+  .cta-desc{ color:var(--muted); font-size:14px; margin:0 0 8px}
+
+  form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .email {
+    flex-grow: 1;
+    min-width: 0;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 12px 14px;
+    color: #eaeaea;
+    border-radius: 10px;
+    outline: none;
+  }
+  .btn {
+    flex-shrink: 0;
+    background: var(--accent);
+    color: #0b0b0b;
+    border: none;
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(255, 138, 0, 0.12);
+  }
+  .btn:active {
+  opacity: 0.6;
+}
+
+  .btn[disabled]{opacity:0.6; cursor:not-allowed}
+
+  .meta{
+    color:var(--muted);
+    font-size:13px;
+  }
+
+  footer{
+    text-align:center;
+    font-size:13px;
+    color:var(--muted);
+  }
+
+  .small{
+    font-size:13px;
+    color:var(--muted);
+  }
+
+  /* subtle divider */
+  .divider{
+    height:1px;
+    background:linear-gradient(90deg, transparent, rgba(255,255,255,0.02), transparent);
+    margin:20px 0;
+  }
+</style>
+</head>
+<body>
+  <main class="card" role="main">
+    <div class="brand">
+      <div class="logo">RA</div>
+      <div>
+        <div style="font-size:14px;color:var(--muted);">ReadAloud</div>
+        <h1>Simple pdfReader</h1>
+      </div>
+    </div>
+
+    <p class="lead">
+      Upload a PDF, press play, and listen with word highlights as they’re spoken.
+      Clean UX, dark theme, and premium option for better experience.
+    </p>
+
+    <div class="features" aria-hidden="true">
+      <span class="pill">Instant play</span>
+      <span class="pill">Word-by-word highlight</span>
+        <span class="pill">Auto-scroll</span>
+        <span class="pill">Chapters</span>
+        <span class="pill">Free & Pro</span>
+        <span class="pill">etc</span>
+        </div>
+
+
+        <aside class="panel" aria-labelledby="notify-heading">
+        <h3 id="notify-heading" class="cta-title">Get notified when we launch</h3>
+        <p class="cta-desc">Drop your email and we'll tell you the moment ReadAloud is live. You can also sign up early for Pro access.</p>
+
+        <form id="subscribeForm">
+        <input class="email" name="email" type="email" placeholder="you@domain.com" required />
+        <button class="btn" type="submit">Notify me</button>
+        </form>
+ 
+        <script>
+        document.getElementById("subscribeForm").addEventListener("submit", function(e){
+        e.preventDefault();
+        fetch("https://script.google.com/macros/s/AKfycbzxCxfWpiEmVE7Z1s0XCIu5bva3_AF13FxMrWRnSc4SvJdlnENV98HXx8V4qJsl-7oj/exec", {
+            method: "POST",
+            body: new FormData(this)
+        }).then(res => alert("Thanks! You'll be notified."));
+        });
+        </script>
+
+
+      <div class="meta">
+        <div class="small">No spam — unsubscribe anytime</div>
+      </div>
+
+      <footer>
+        <div class="small">© <strong>ReadAloud</strong> — Built by Inti. Designed for focused reading.</div>
+      </footer>
+    </aside>
+  </main>
+</body>
+</html>
