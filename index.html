@@ -88,80 +88,7 @@
     border:1px solid rgba(255,255,255,0.02);
   }
 
-  /* form area */
-  .panel{
-    background: rgba(255,255,255,0.02);
-    border-radius:10px;
-    padding:20px;
-    border:1px solid rgba(255,255,255,0.03);
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
 
-  .cta-title{
-    font-size:16px;
-    font-weight:600;
-    margin:0;
-    color:#fff;
-  }
-  .cta-desc{ color:var(--muted); font-size:14px; margin:0 0 8px}
-
-  form {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-  }
-
-  .email {
-    flex-grow: 1;
-    min-width: 0;
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    padding: 12px 14px;
-    color: #eaeaea;
-    border-radius: 10px;
-    outline: none;
-  }
-  .btn {
-    flex-shrink: 0;
-    background: var(--accent);
-    color: #0b0b0b;
-    border: none;
-    padding: 12px 14px;
-    border-radius: 10px;
-    font-weight: 600;
-    cursor: pointer;
-    box-shadow: 0 6px 18px rgba(255, 138, 0, 0.12);
-  }
-  .btn:active {
-  opacity: 0.6;
-}
-
-  .btn[disabled]{opacity:0.6; cursor:not-allowed}
-
-  .meta{
-    color:var(--muted);
-    font-size:13px;
-  }
-
-  footer{
-    text-align:center;
-    font-size:13px;
-    color:var(--muted);
-  }
-
-  .small{
-    font-size:13px;
-    color:var(--muted);
-  }
-
-  /* subtle divider */
-  .divider{
-    height:1px;
-    background:linear-gradient(90deg, transparent, rgba(255,255,255,0.02), transparent);
-    margin:20px 0;
-  }
 </style>
 </head>
 <body>
@@ -188,38 +115,15 @@
         <span class="pill">etc</span>
         </div>
 
-
-        <aside class="panel" aria-labelledby="notify-heading">
-        <h3 id="notify-heading" class="cta-title">Get notified when we launch</h3>
-        <p class="cta-desc">Drop your email and we'll tell you the moment ReadAloud is live.</p>
-
-        <form id="subscribeForm">
-        <input class="email" name="email" type="email" placeholder="you@domain.com" required />
-        <button class="btn" type="submit">Notify me</button>
-        </form>
- 
-        <script>
-        document.getElementById("subscribeForm").addEventListener("submit", function(e){
-        e.preventDefault();
-        fetch("https://script.google.com/macros/s/AKfycbzxCxfWpiEmVE7Z1s0XCIu5bva3_AF13FxMrWRnSc4SvJdlnENV98HXx8V4qJsl-7oj/exec", {
-            method: "POST",
-            body: new FormData(this)
-        }).then(res => alert("Thanks! You'll be notified."));
-        });
-        </script>
-
-
-      <div class="meta">
-        <div class="small">No spam — unsubscribe anytime</div>
-      </div>
-
       <footer>
-        <div class="small">© <strong>ReadAloud</strong> — Built by Inti@. Designed for more focused reading.</div>
+        <div class="small">© <strong>ReadAloud</strong> — Built by @Arashcom. Designed for focused reading.</div>
       </footer>
     </aside>
   </main>
 </body>
 </html>
+
+
 
 
 
